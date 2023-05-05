@@ -10,9 +10,6 @@ body {
 #main-header{
     height: 60px;
     background: #373737;
-    display: flex;
-    align-items: center;
-    gap: 15px;
     padding: 0 20px;
 }
 #main-header h1{
@@ -21,4 +18,29 @@ body {
 #main-header img{
     width: 40px;
     height: 40px;
+}
+#main-header .wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px;
+}
+#main-header span{
+    color: #ff8308;
+}
+#main-header button{
+    margin: 0 0 0 auto;
+    background: none;
+    border: 2px solid #ff8308;
+    color: #ff8308;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#main-header button:hover{
+    background: #000;
+}
+.wrapper{
+    width: 900px;
+    margin: 0 auto;
 }
