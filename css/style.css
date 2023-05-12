@@ -60,7 +60,7 @@ body {
 .modal .modal-content{
     width: 400px;
     min-width: 300px;
-    min-height: 200px;
+    min-height: 100px;
     background: #373737;
     border-radius: 20px;
     padding: 20px;
@@ -82,4 +82,8 @@ body {
 
 .modal .modal-content h1{
     margin: 0;
+}
+
+#add-stock form{
+    margin: 20px 0 0 0;
 }
