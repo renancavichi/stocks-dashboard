@@ -87,3 +87,28 @@ body {
 #add-stock form{
     margin: 20px 0 0 0;
 }
+
+#tickers-list{
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+#tickers-list .ticker{
+    background: #262626;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tickers-list .ticker h2{
+    margin-top: 0;
+}
+
+#tickers-list .ticker p{
+    margin: 0;
+}
