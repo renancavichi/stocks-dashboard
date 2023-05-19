@@ -39,12 +39,14 @@ const handleAddTicker = async (event) => {
 
             const newTicker = 
             `<div class="ticker">
+                <button class="btn-close" onclick="removeTicker(event)">x</button>
                 <h2>${ticker}</h2>
-                <p class="${priceChange}">${Symbol} U$ ${priceFormatted}</p>
+                <p class="${priceChange}">${Symbol} $ ${priceFormatted}</p>
             </div>
             `
             const tickersList = document.querySelector("#tickers-list")
             tickersList.innerHTML = newTicker + tickersList.innerHTML
+            addTickersCloseEvents()
             closeModal('#add-stock')
         }else{
             alert(`Ticker ${ticker} não encontrado!`)
@@ -60,17 +62,27 @@ const handleTickerMouseEnter = (event) => {
     btnClose.style.display = "block"
 }
 
+const addTickersCloseEvents = () => {
+    const tickers = document.querySelectorAll(".ticker")
+    tickers.forEach((ticker) => {
+        ticker.addEventListener("mouseenter", handleTickerMouseEnter)
+        ticker.addEventListener("mouseleave", handleTickerMouseLeave)
+    })
+}
+
 const handleTickerMouseLeave = (event) => {
     const ticker = event.target
     const btnClose = ticker.querySelector(".btn-close")
     btnClose.style.display = "none"
 }
 
+const removeTicker = (event) => {
+    const btnClose = event.target
+    const ticker = btnClose.closest('.ticker')
+    ticker.remove()
+}
+
 const modal = document.querySelector(".modal")
-const tickers = document.querySelectorAll(".ticker")
 modal.addEventListener("click", handleModalClose)
 
-tickers.forEach((ticker) => {
-    ticker.addEventListener("mouseenter", handleTickerMouseEnter)
-    ticker.addEventListener("mouseleave", handleTickerMouseLeave)
-})
+addTickersCloseEvents()
