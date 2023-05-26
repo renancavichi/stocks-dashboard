@@ -67,7 +67,8 @@ body {
     position: relative;
 }
 
-.modal .modal-content button.btn-close, #tickers-list .ticker button.btn-close{
+.modal .modal-content button.btn-close, #tickers-list .ticker button.btn-close,
+#tickers-list .ticker button.btn-refresh{
     position: absolute;
     top: 0;
     right: 10px;
@@ -125,5 +126,11 @@ body {
 #tickers-list .ticker button.btn-close{
     line-height: 14px;
     right: 5px;
+    display: none;
+}
+
+#tickers-list .ticker button.btn-refresh{
+    right: 25px;
+    top: -7px;
     display: none;
 }
